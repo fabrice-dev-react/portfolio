@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Announcer | Transform Your SaaS Product Announcements",
-  description: "hello",
+  title: "Portfolio | Fabrice",
+  description: "Web development",
 };
 export default function RootLayout({
   children,
