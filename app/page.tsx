@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, FormEvent } from "react";
+import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import {
   Menu,
   X,
@@ -14,6 +14,12 @@ import {
   GithubIcon,
 } from "lucide-react";
 import Image from "next/image";
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 export default function PortfolioWebsite() {
   const [darkMode, setDarkMode] = useState(true);
@@ -32,13 +38,15 @@ export default function PortfolioWebsite() {
 
   const [status, setStatus] = useState("");
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleInputChange = (e: FormEvent) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
